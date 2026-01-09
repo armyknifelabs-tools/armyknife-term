@@ -1,4 +1,4 @@
-name := 'cosmic-term'
+name := 'armyknife-term'
 export APPID := 'com.system76.CosmicTerm'
 
 rootdir := ''

@@ -1,5 +1,5 @@
 [package]
-name = "cosmic-term"
+name = "armyknife-term"
 version = "0.1.0"
 authors = ["Jeremy Soller <jeremy@system76.com>"]
 edition = "2024"
@@ -66,5 +66,5 @@ debug = true
 
 # [patch.'https://github.com/pop-os/libcosmic']
 # libcosmic = { path = "../libcosmic" }
-# cosmic-config = { path = "../libcosmic/cosmic-config" }
-# cosmic-theme = { path = "../libcosmic/cosmic-theme" }
+# armyknife-config = { path = "../libcosmic/cosmic-config" }
+# armyknife-theme = { path = "../libcosmic/cosmic-theme" }

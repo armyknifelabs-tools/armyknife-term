@@ -99,7 +99,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             }
             Some("--version") | Some("-V") => {
                 println!(
-                    "cosmic-term {}",
+                    "armyknife-term {}",
                     env!("CARGO_PKG_VERSION"),
                 );
                 return Ok(());
@@ -654,9 +654,9 @@ impl App {
             let (header_title, window_title) = match tab_model.text(tab_model.active()) {
                 Some(tab_title) => (
                     tab_title.to_string(),
-                    format!("{tab_title} — {}", fl!("cosmic-terminal")),
+                    format!("{tab_title} — {}", fl!("armyknife-terminal")),
                 ),
-                None => (String::new(), fl!("cosmic-terminal")),
+                None => (String::new(), fl!("armyknife-terminal")),
             };
             self.set_header_title(header_title);
             Task::batch([
@@ -671,7 +671,7 @@ impl App {
             log::error!("Failed to get the specific pane");
             Task::batch([
                 if let Some(window_id) = self.core.main_window_id() {
-                    self.set_window_title(fl!("cosmic-terminal"), window_id)
+                    self.set_window_title(fl!("armyknife-terminal"), window_id)
                 } else {
                     Task::none()
                 },
@@ -1409,7 +1409,7 @@ impl Application for App {
     type Message = Message;
 
     /// The unique application ID to supply to the window manager.
-    const APP_ID: &'static str = "com.system76.CosmicTerm";
+    const APP_ID: &'static str = "dev.armyknifeTerm";
 
     fn core(&self) -> &Core {
         &self.core
@@ -1535,7 +1535,7 @@ impl Application for App {
         terminal_ids.insert(pane_model.focused(), widget::Id::unique());
 
         let about = About::default()
-            .name(fl!("cosmic-terminal"))
+            .name(fl!("armyknife-terminal"))
             .icon(widget::icon::from_name(Self::APP_ID))
             .version(env!("CARGO_PKG_VERSION"))
             .author("System76")
